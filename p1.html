@@ -1,0 +1,1897 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1'>
+  <title>p1</title>
+  <style type='text/css'>
+    html {
+      overflow-x: initial !important;
+    }
+
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --select-text-bg-color: #B5D6FC;
+      --select-text-font-color: auto;
+      --monospace: "Lucida Console", Consolas, "Courier", monospace;
+    }
+
+    html {
+      font-size: 14px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      height: auto;
+      bottom: 0px;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      font-size: 1rem;
+      line-height: 1.42857;
+      overflow-x: hidden;
+      background: inherit;
+      tab-size: 4;
+    }
+
+    iframe {
+      margin: auto;
+    }
+
+    a.url {
+      word-break: break-all;
+    }
+
+    a:active,
+    a:hover {
+      outline: 0px;
+    }
+
+    .in-text-selection,
+    ::selection {
+      text-shadow: none;
+      background: var(--select-text-bg-color);
+      color: var(--select-text-font-color);
+    }
+
+    #write {
+      margin: 0px auto;
+      height: auto;
+      width: inherit;
+      word-break: normal;
+      overflow-wrap: break-word;
+      position: relative;
+      white-space: normal;
+      overflow-x: visible;
+      padding-top: 40px;
+    }
+
+    #write.first-line-indent p {
+      text-indent: 2em;
+    }
+
+    #write.first-line-indent li p,
+    #write.first-line-indent p * {
+      text-indent: 0px;
+    }
+
+    #write.first-line-indent li {
+      margin-left: 2em;
+    }
+
+    .for-image #write {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    body.typora-export {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .typora-export .footnote-line,
+    .typora-export li,
+    .typora-export p {
+      white-space: pre-wrap;
+    }
+
+    @media screen and (max-width: 500px) {
+      body.typora-export {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      #write {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .CodeMirror-sizer {
+        margin-left: 0px !important;
+      }
+
+      .CodeMirror-gutters {
+        display: none !important;
+      }
+    }
+
+    #write li>figure:last-child {
+      margin-bottom: 0.5rem;
+    }
+
+    #write ol,
+    #write ul {
+      position: relative;
+    }
+
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      color: inherit;
+      font: inherit;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      line-height: normal;
+      padding: 0px;
+    }
+
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
+
+    #write h1,
+    #write h2,
+    #write h3,
+    #write h4,
+    #write h5,
+    #write h6,
+    #write p,
+    #write pre {
+      width: inherit;
+    }
+
+    #write h1,
+    #write h2,
+    #write h3,
+    #write h4,
+    #write h5,
+    #write h6,
+    #write p {
+      position: relative;
+    }
+
+    p {
+      line-height: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      break-after: avoid-page;
+      break-inside: avoid;
+      orphans: 2;
+    }
+
+    p {
+      orphans: 4;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+    }
+
+    h5 {
+      font-size: 1.2rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+
+    .md-math-block,
+    .md-rawblock,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .md-blockmeta {
+      color: rgb(204, 204, 204);
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    sup.md-footnote {
+      padding: 2px 4px;
+      background-color: rgba(238, 238, 238, 0.7);
+      color: rgb(85, 85, 85);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    sup.md-footnote a,
+    sup.md-footnote a:hover {
+      color: inherit;
+      text-transform: inherit;
+      text-decoration: inherit;
+    }
+
+    #write input[type="checkbox"] {
+      cursor: pointer;
+      width: inherit;
+      height: inherit;
+    }
+
+    figure {
+      overflow-x: auto;
+      margin: 1.2em 0px;
+      max-width: calc(100% + 16px);
+      padding: 0px;
+    }
+
+    figure>table {
+      margin: 0px !important;
+    }
+
+    tr {
+      break-inside: avoid;
+      break-after: auto;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0px;
+      width: 100%;
+      overflow: auto;
+      break-inside: auto;
+      text-align: left;
+    }
+
+    table.md-table td {
+      min-width: 32px;
+    }
+
+    .CodeMirror-gutters {
+      border-right: 0px;
+      background-color: inherit;
+    }
+
+    .CodeMirror-linenumber {
+      user-select: none;
+    }
+
+    .CodeMirror {
+      text-align: left;
+    }
+
+    .CodeMirror-placeholder {
+      opacity: 0.3;
+    }
+
+    .CodeMirror pre {
+      padding: 0px 4px;
+    }
+
+    .CodeMirror-lines {
+      padding: 0px;
+    }
+
+    div.hr:focus {
+      cursor: none;
+    }
+
+    #write pre {
+      white-space: pre-wrap;
+    }
+
+    #write.fences-no-line-wrapping pre {
+      white-space: pre;
+    }
+
+    #write pre.ty-contain-cm {
+      white-space: normal;
+    }
+
+    .CodeMirror-gutters {
+      margin-right: 4px;
+    }
+
+    .md-fences {
+      font-size: 0.9rem;
+      display: block;
+      break-inside: avoid;
+      text-align: left;
+      overflow: visible;
+      white-space: pre;
+      background: inherit;
+      position: relative !important;
+    }
+
+    .md-diagram-panel {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+      padding-top: 0px;
+      padding-bottom: 8px;
+      overflow-x: auto;
+    }
+
+    #write .md-fences.mock-cm {
+      white-space: pre-wrap;
+    }
+
+    .md-fences.md-fences-with-lineno {
+      padding-left: 0px;
+    }
+
+    #write.fences-no-line-wrapping .md-fences.mock-cm {
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .md-fences.mock-cm.md-fences-with-lineno {
+      padding-left: 8px;
+    }
+
+    .CodeMirror-line,
+    twitterwidget {
+      break-inside: avoid;
+    }
+
+    .footnotes {
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .footnotes+.footnotes {
+      margin-top: 0px;
+    }
+
+    .md-reset {
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+      outline: 0px;
+      vertical-align: top;
+      background: 0px 0px;
+      text-decoration: none;
+      text-shadow: none;
+      float: none;
+      position: static;
+      width: auto;
+      height: auto;
+      white-space: nowrap;
+      cursor: inherit;
+      -webkit-tap-highlight-color: transparent;
+      line-height: normal;
+      font-weight: 400;
+      text-align: left;
+      box-sizing: content-box;
+      direction: ltr;
+    }
+
+    li div {
+      padding-top: 0px;
+    }
+
+    blockquote {
+      margin: 1rem 0px;
+    }
+
+    li .mathjax-block,
+    li p {
+      margin: 0.5rem 0px;
+    }
+
+    li {
+      margin: 0px;
+      position: relative;
+    }
+
+    blockquote> :last-child {
+      margin-bottom: 0px;
+    }
+
+    blockquote> :first-child,
+    li> :first-child {
+      margin-top: 0px;
+    }
+
+    .footnotes-area {
+      color: rgb(136, 136, 136);
+      margin-top: 0.714rem;
+      padding-bottom: 0.143rem;
+      white-space: normal;
+    }
+
+    #write .footnote-line {
+      white-space: pre-wrap;
+    }
+
+    @media print {
+
+      body,
+      html {
+        border: 1px solid transparent;
+        height: 99%;
+        break-after: avoid;
+        break-before: avoid;
+      }
+
+      #write {
+        margin-top: 0px;
+        padding-top: 0px;
+        border-color: transparent !important;
+      }
+
+      .typora-export * {
+        -webkit-print-color-adjust: exact;
+      }
+
+      html.blink-to-pdf {
+        font-size: 13px;
+      }
+
+      .typora-export #write {
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-bottom: 0px;
+        break-after: avoid;
+      }
+
+      .typora-export #write::after {
+        height: 0px;
+      }
+    }
+
+    .footnote-line {
+      margin-top: 0.714em;
+      font-size: 0.7em;
+    }
+
+    a img,
+    img a {
+      cursor: pointer;
+    }
+
+    pre.md-meta-block {
+      font-size: 0.8rem;
+      min-height: 0.8rem;
+      white-space: pre-wrap;
+      background: rgb(204, 204, 204);
+      display: block;
+      overflow-x: hidden;
+    }
+
+    p>.md-image:only-child:not(.md-img-error) img,
+    p>img:only-child {
+      display: block;
+      margin: auto;
+    }
+
+    p>.md-image:only-child {
+      display: inline-block;
+      width: 100%;
+    }
+
+    #write .MathJax_Display {
+      margin: 0.8em 0px 0px;
+    }
+
+    .md-math-block {
+      width: 100%;
+    }
+
+    .md-math-block:not(:empty)::after {
+      display: none;
+    }
+
+    [contenteditable="true"]:active,
+    [contenteditable="true"]:focus {
+      outline: 0px;
+      box-shadow: none;
+    }
+
+    .md-task-list-item {
+      position: relative;
+      list-style-type: none;
+    }
+
+    .task-list-item.md-task-list-item {
+      padding-left: 0px;
+    }
+
+    .md-task-list-item>input {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      margin-left: -1.2em;
+      margin-top: calc(1em - 10px);
+      border: none;
+    }
+
+    .math {
+      font-size: 1rem;
+    }
+
+    .md-toc {
+      min-height: 3.58rem;
+      position: relative;
+      font-size: 0.9rem;
+      border-radius: 10px;
+    }
+
+    .md-toc-content {
+      position: relative;
+      margin-left: 0px;
+    }
+
+    .md-toc-content::after,
+    .md-toc::after {
+      display: none;
+    }
+
+    .md-toc-item {
+      display: block;
+      color: rgb(65, 131, 196);
+    }
+
+    .md-toc-item a {
+      text-decoration: none;
+    }
+
+    .md-toc-inner:hover {
+      text-decoration: underline;
+    }
+
+    .md-toc-inner {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .md-toc-h1 .md-toc-inner {
+      margin-left: 0px;
+      font-weight: 700;
+    }
+
+    .md-toc-h2 .md-toc-inner {
+      margin-left: 2em;
+    }
+
+    .md-toc-h3 .md-toc-inner {
+      margin-left: 4em;
+    }
+
+    .md-toc-h4 .md-toc-inner {
+      margin-left: 6em;
+    }
+
+    .md-toc-h5 .md-toc-inner {
+      margin-left: 8em;
+    }
+
+    .md-toc-h6 .md-toc-inner {
+      margin-left: 10em;
+    }
+
+    @media screen and (max-width: 48em) {
+      .md-toc-h3 .md-toc-inner {
+        margin-left: 3.5em;
+      }
+
+      .md-toc-h4 .md-toc-inner {
+        margin-left: 5em;
+      }
+
+      .md-toc-h5 .md-toc-inner {
+        margin-left: 6.5em;
+      }
+
+      .md-toc-h6 .md-toc-inner {
+        margin-left: 8em;
+      }
+    }
+
+    a.md-toc-inner {
+      font-size: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    .footnote-line a:not(.reversefootnote) {
+      color: inherit;
+    }
+
+    .md-attr {
+      display: none;
+    }
+
+    .md-fn-count::after {
+      content: ".";
+    }
+
+    code,
+    pre,
+    samp,
+    tt {
+      font-family: var(--monospace);
+    }
+
+    kbd {
+      margin: 0px 0.1em;
+      padding: 0.1em 0.6em;
+      font-size: 0.8em;
+      color: rgb(36, 39, 41);
+      background: rgb(255, 255, 255);
+      border: 1px solid rgb(173, 179, 185);
+      border-radius: 3px;
+      box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .md-comment {
+      color: rgb(162, 127, 3);
+      opacity: 0.8;
+      font-family: var(--monospace);
+    }
+
+    code {
+      text-align: left;
+      vertical-align: initial;
+    }
+
+    a.md-print-anchor {
+      white-space: pre !important;
+      border-width: initial !important;
+      border-style: none !important;
+      border-color: initial !important;
+      display: inline-block !important;
+      position: absolute !important;
+      width: 1px !important;
+      right: 0px !important;
+      outline: 0px !important;
+      background: 0px 0px !important;
+      text-decoration: initial !important;
+      text-shadow: initial !important;
+    }
+
+    .md-inline-math .MathJax_SVG .noError {
+      display: none !important;
+    }
+
+    .html-for-mac .inline-math-svg .MathJax_SVG {
+      vertical-align: 0.2px;
+    }
+
+    .md-math-block .MathJax_SVG_Display {
+      text-align: center;
+      margin: 0px;
+      position: relative;
+      text-indent: 0px;
+      max-width: none;
+      max-height: none;
+      min-height: 0px;
+      min-width: 100%;
+      width: auto;
+      overflow-y: hidden;
+      display: block !important;
+    }
+
+    .MathJax_SVG_Display,
+    .md-inline-math .MathJax_SVG_Display {
+      width: auto;
+      margin: inherit;
+      display: inline-block !important;
+    }
+
+    .MathJax_SVG .MJX-monospace {
+      font-family: var(--monospace);
+    }
+
+    .MathJax_SVG .MJX-sans-serif {
+      font-family: sans-serif;
+    }
+
+    .MathJax_SVG {
+      display: inline;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      zoom: 90%;
+      text-indent: 0px;
+      text-align: left;
+      text-transform: none;
+      letter-spacing: normal;
+      word-spacing: normal;
+      overflow-wrap: normal;
+      white-space: nowrap;
+      float: none;
+      direction: ltr;
+      max-width: none;
+      max-height: none;
+      min-width: 0px;
+      min-height: 0px;
+      border: 0px;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .MathJax_SVG * {
+      transition: none 0s ease 0s;
+    }
+
+    .MathJax_SVG_Display svg {
+      vertical-align: middle !important;
+      margin-bottom: 0px !important;
+      margin-top: 0px !important;
+    }
+
+    .os-windows.monocolor-emoji .md-emoji {
+      font-family: "Segoe UI Symbol", sans-serif;
+    }
+
+    .md-diagram-panel>svg {
+      max-width: 100%;
+    }
+
+    [lang="mermaid"] svg,
+    [lang="flow"] svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    [lang="mermaid"] .node text {
+      font-size: 1rem;
+    }
+
+    table tr th {
+      border-bottom: 0px;
+    }
+
+    video {
+      max-width: 100%;
+      display: block;
+      margin: 0px auto;
+    }
+
+    iframe {
+      max-width: 100%;
+      width: 100%;
+      border: none;
+    }
+
+    .highlight td,
+    .highlight tr {
+      border: 0px;
+    }
+
+    svg[id^="mermaidChart"] {
+      line-height: 1em;
+    }
+
+
+    .CodeMirror {
+      height: auto;
+    }
+
+    .CodeMirror.cm-s-inner {
+      background: inherit;
+    }
+
+    .CodeMirror-scroll {
+      overflow: auto hidden;
+      z-index: 3;
+    }
+
+    .CodeMirror-gutter-filler,
+    .CodeMirror-scrollbar-filler {
+      background-color: rgb(255, 255, 255);
+    }
+
+    .CodeMirror-gutters {
+      border-right: 1px solid rgb(221, 221, 221);
+      background: inherit;
+      white-space: nowrap;
+    }
+
+    .CodeMirror-linenumber {
+      padding: 0px 3px 0px 5px;
+      text-align: right;
+      color: rgb(153, 153, 153);
+    }
+
+    .cm-s-inner .cm-keyword {
+      color: rgb(119, 0, 136);
+    }
+
+    .cm-s-inner .cm-atom,
+    .cm-s-inner.cm-atom {
+      color: rgb(34, 17, 153);
+    }
+
+    .cm-s-inner .cm-number {
+      color: rgb(17, 102, 68);
+    }
+
+    .cm-s-inner .cm-def {
+      color: rgb(0, 0, 255);
+    }
+
+    .cm-s-inner .cm-variable {
+      color: rgb(0, 0, 0);
+    }
+
+    .cm-s-inner .cm-variable-2 {
+      color: rgb(0, 85, 170);
+    }
+
+    .cm-s-inner .cm-variable-3 {
+      color: rgb(0, 136, 85);
+    }
+
+    .cm-s-inner .cm-string {
+      color: rgb(170, 17, 17);
+    }
+
+    .cm-s-inner .cm-property {
+      color: rgb(0, 0, 0);
+    }
+
+    .cm-s-inner .cm-operator {
+      color: rgb(152, 26, 26);
+    }
+
+    .cm-s-inner .cm-comment,
+    .cm-s-inner.cm-comment {
+      color: rgb(170, 85, 0);
+    }
+
+    .cm-s-inner .cm-string-2 {
+      color: rgb(255, 85, 0);
+    }
+
+    .cm-s-inner .cm-meta {
+      color: rgb(85, 85, 85);
+    }
+
+    .cm-s-inner .cm-qualifier {
+      color: rgb(85, 85, 85);
+    }
+
+    .cm-s-inner .cm-builtin {
+      color: rgb(51, 0, 170);
+    }
+
+    .cm-s-inner .cm-bracket {
+      color: rgb(153, 153, 119);
+    }
+
+    .cm-s-inner .cm-tag {
+      color: rgb(17, 119, 0);
+    }
+
+    .cm-s-inner .cm-attribute {
+      color: rgb(0, 0, 204);
+    }
+
+    .cm-s-inner .cm-header,
+    .cm-s-inner.cm-header {
+      color: rgb(0, 0, 255);
+    }
+
+    .cm-s-inner .cm-quote,
+    .cm-s-inner.cm-quote {
+      color: rgb(0, 153, 0);
+    }
+
+    .cm-s-inner .cm-hr,
+    .cm-s-inner.cm-hr {
+      color: rgb(153, 153, 153);
+    }
+
+    .cm-s-inner .cm-link,
+    .cm-s-inner.cm-link {
+      color: rgb(0, 0, 204);
+    }
+
+    .cm-negative {
+      color: rgb(221, 68, 68);
+    }
+
+    .cm-positive {
+      color: rgb(34, 153, 34);
+    }
+
+    .cm-header,
+    .cm-strong {
+      font-weight: 700;
+    }
+
+    .cm-del {
+      text-decoration: line-through;
+    }
+
+    .cm-em {
+      font-style: italic;
+    }
+
+    .cm-link {
+      text-decoration: underline;
+    }
+
+    .cm-error {
+      color: red;
+    }
+
+    .cm-invalidchar {
+      color: red;
+    }
+
+    .cm-constant {
+      color: rgb(38, 139, 210);
+    }
+
+    .cm-defined {
+      color: rgb(181, 137, 0);
+    }
+
+    div.CodeMirror span.CodeMirror-matchingbracket {
+      color: rgb(0, 255, 0);
+    }
+
+    div.CodeMirror span.CodeMirror-nonmatchingbracket {
+      color: rgb(255, 34, 34);
+    }
+
+    .cm-s-inner .CodeMirror-activeline-background {
+      background: inherit;
+    }
+
+    .CodeMirror {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .CodeMirror-scroll {
+      height: 100%;
+      outline: 0px;
+      position: relative;
+      box-sizing: content-box;
+      background: inherit;
+    }
+
+    .CodeMirror-sizer {
+      position: relative;
+    }
+
+    .CodeMirror-gutter-filler,
+    .CodeMirror-hscrollbar,
+    .CodeMirror-scrollbar-filler,
+    .CodeMirror-vscrollbar {
+      position: absolute;
+      z-index: 6;
+      display: none;
+    }
+
+    .CodeMirror-vscrollbar {
+      right: 0px;
+      top: 0px;
+      overflow: hidden;
+    }
+
+    .CodeMirror-hscrollbar {
+      bottom: 0px;
+      left: 0px;
+      overflow: hidden;
+    }
+
+    .CodeMirror-scrollbar-filler {
+      right: 0px;
+      bottom: 0px;
+    }
+
+    .CodeMirror-gutter-filler {
+      left: 0px;
+      bottom: 0px;
+    }
+
+    .CodeMirror-gutters {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      padding-bottom: 30px;
+      z-index: 3;
+    }
+
+    .CodeMirror-gutter {
+      white-space: normal;
+      height: 100%;
+      box-sizing: content-box;
+      padding-bottom: 30px;
+      margin-bottom: -32px;
+      display: inline-block;
+    }
+
+    .CodeMirror-gutter-wrapper {
+      position: absolute;
+      z-index: 4;
+      background: 0px 0px !important;
+      border: none !important;
+    }
+
+    .CodeMirror-gutter-background {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      z-index: 4;
+    }
+
+    .CodeMirror-gutter-elt {
+      position: absolute;
+      cursor: default;
+      z-index: 4;
+    }
+
+    .CodeMirror-lines {
+      cursor: text;
+    }
+
+    .CodeMirror pre {
+      border-radius: 0px;
+      border-width: 0px;
+      background: 0px 0px;
+      font-family: inherit;
+      font-size: inherit;
+      margin: 0px;
+      white-space: pre;
+      overflow-wrap: normal;
+      color: inherit;
+      z-index: 2;
+      position: relative;
+      overflow: visible;
+    }
+
+    .CodeMirror-wrap pre {
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      word-break: normal;
+    }
+
+    .CodeMirror-code pre {
+      border-right: 30px solid transparent;
+      width: fit-content;
+    }
+
+    .CodeMirror-wrap .CodeMirror-code pre {
+      border-right: none;
+      width: auto;
+    }
+
+    .CodeMirror-linebackground {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      z-index: 0;
+    }
+
+    .CodeMirror-linewidget {
+      position: relative;
+      z-index: 2;
+      overflow: auto;
+    }
+
+    .CodeMirror-wrap .CodeMirror-scroll {
+      overflow-x: hidden;
+    }
+
+    .CodeMirror-measure {
+      position: absolute;
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    .CodeMirror-measure pre {
+      position: static;
+    }
+
+    .CodeMirror div.CodeMirror-cursor {
+      position: absolute;
+      visibility: hidden;
+      border-right: none;
+      width: 0px;
+    }
+
+    .CodeMirror div.CodeMirror-cursor {
+      visibility: hidden;
+    }
+
+    .CodeMirror-focused div.CodeMirror-cursor {
+      visibility: inherit;
+    }
+
+    .cm-searching {
+      background: rgba(255, 255, 0, 0.4);
+    }
+
+    @media print {
+      .CodeMirror div.CodeMirror-cursor {
+        visibility: hidden;
+      }
+    }
+
+
+    :root {
+      --monospace: Courier, monospace;
+      --bg-color: #f9f9f9;
+      --text-color: #303030;
+      --active-file-bg-color: #E6E8EA;
+      --side-bar-bg-color: #f9f9f9;
+    }
+
+    #write {
+      --bg-color: #fff;
+    }
+
+    #write div,
+    #write p {
+      width: auto;
+    }
+
+    html {
+      font-size: 15px;
+    }
+
+    body {
+      background: rgb(249, 249, 249);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 19px;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    #footer-word-count-info {
+      background: var(--bg-color);
+    }
+
+    header,
+    .dropmenu {
+      --text-color: #223c61;
+    }
+
+    header {
+      color: rgb(51, 51, 51);
+    }
+
+    #typora-sidebar {
+      font-size: 14px;
+    }
+
+    .file-list-item {
+      border: 0px;
+    }
+
+    .file-list-item:hover,
+    .file-tree-node[data-is-directory="false"]:hover>.file-node-background {
+      transition: background-color 0.6s ease 0s;
+      background: var(--active-file-bg-color);
+    }
+
+    .file-node-content {
+      cursor: default;
+    }
+
+    .file-list-item-summary {
+      height: 34px;
+    }
+
+    .show-folder-name .file-list-item {
+      padding-top: 16px;
+      padding-bottom: 24px;
+    }
+
+    .file-list-item {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .file-list-item-file-name {
+      line-height: 20px;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    #sidebar-files-menu,
+    #ty-sidebar-footer {
+      background: var(--bg-color);
+    }
+
+    body,
+    html {
+      background: url("scribble/light_wool.png") repeat;
+    }
+
+    #write {
+      width: 100%;
+      max-width: 768px;
+      background: rgb(255, 255, 255);
+      margin: 40px auto 120px;
+      border-radius: 7px;
+      border: 1px solid rgb(238, 238, 238);
+      min-height: calc(100vh - 6em);
+      padding: 60px;
+      line-height: 1.6em;
+    }
+
+    @media screen and (max-width: 820px) {
+
+      body,
+      html {
+        --side-bar-bg-color: #fff;
+        background: rgb(255, 255, 255);
+      }
+
+      #write {
+        border: none;
+        margin-top: 0px;
+      }
+    }
+
+    @media screen and (max-width: 1160px) {
+      body.pin-outline {
+        --side-bar-bg-color: #fff;
+        background: rgb(255, 255, 255);
+      }
+
+      body.pin-outline #write {
+        border: none;
+        margin-top: 0px;
+      }
+    }
+
+    .typora-node #write {
+      min-height: calc(100% - 6em);
+    }
+
+    h1 {
+      text-align: center;
+      line-height: 1.5em;
+      margin-bottom: 60px;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 2em 0px 1em;
+    }
+
+    ul,
+    ol {
+      padding: 0px 0px 0px 30px;
+    }
+
+    blockquote {
+      padding: 0px 1em;
+      margin: 14px 0px;
+      border: 2px dashed rgb(208, 223, 218);
+      border-radius: 5px;
+      color: rgb(96, 96, 96);
+      background: rgb(249, 249, 249);
+      transition: all 0s ease 0s, all 0.3s ease 0s;
+      font-style: normal !important;
+    }
+
+    #write .md-toc {
+      margin: 2em -60px;
+      border-bottom: 1px dotted rgb(204, 204, 204);
+      border-top: 1px dotted rgb(204, 204, 204);
+      width: calc(100% + 120px);
+      border-radius: 0px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    #write>.md-toc:first-child {
+      margin-top: 0px;
+      border-top: 0px;
+    }
+
+    #write>.md-meta-block:first-child {
+      margin: -60px -60px 2em;
+      width: calc(100% + 120px);
+      border-bottom: 1px dotted rgb(204, 204, 204);
+      padding: 24px 60px;
+      background: rgb(253, 253, 253);
+      font-size: 14px;
+      border-radius: 0px;
+      color: var(--text-color);
+    }
+
+    .md-toc:focus .md-toc-content {
+      border-width: initial;
+      border-style: none;
+      border-image: initial;
+      border-color: inherit;
+      margin: 20px 0px;
+    }
+
+    .md-toc-content {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    #write div.md-toc-tooltip {
+      left: 0px;
+      padding-left: 60px;
+      padding-right: 20px;
+      top: -24px;
+      border-top: 1px dotted rgb(204, 204, 204);
+    }
+
+    pre[mdtype] {
+      overflow-wrap: break-word;
+      background: rgb(248, 248, 248);
+      padding: 1em;
+      border-radius: 5px;
+      width: 100%;
+      line-height: 1.2em;
+    }
+
+    code {
+      background: rgb(248, 248, 248);
+      padding: 0.05rem;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      color: rgb(138, 0, 4);
+    }
+
+    p {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    blockquote> :first-child {
+      margin-top: 1em;
+    }
+
+    blockquote> :last-child {
+      margin-bottom: inherit;
+    }
+
+    .md-fences {
+      font-size: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(34, 102, 153);
+      line-height: 1.4em;
+      display: inline-block;
+      vertical-align: baseline;
+      zoom: 1;
+      transition: color 0.3s ease 0s;
+    }
+
+    [md-inline] a:hover {
+      color: rgb(29, 88, 132);
+      background-image: url("scribble/line.png");
+      background-repeat: repeat-x;
+      background-position: left bottom;
+    }
+
+    #write .code-tooltip {
+      width: auto;
+    }
+
+    #write>hr {
+      margin: 2em -60px;
+      border-width: 0px 0px 1px;
+      border-top-style: initial;
+      border-right-style: initial;
+      border-left-style: initial;
+      border-top-color: initial;
+      border-right-color: initial;
+      border-left-color: initial;
+      border-image: initial;
+      border-bottom-style: dotted;
+      border-bottom-color: rgb(204, 204, 204);
+    }
+
+    #write [cid]>table {
+      border-collapse: collapse;
+      border-spacing: 0px;
+      border: 1px solid rgb(204, 202, 204);
+    }
+
+    #write table th {
+      padding: 10px 15px;
+      border-right: 1px solid rgb(204, 202, 204);
+      background: rgb(233, 231, 233);
+      text-shadow: rgb(243, 243, 243) 1px 1px 1px;
+      font-weight: inherit;
+    }
+
+    #write table [cid]>td {
+      padding: 10px;
+      border-right: 1px solid rgb(204, 202, 204);
+      border-top: 1px solid rgb(204, 202, 204);
+    }
+
+    .cm-s-typora-default .cm-header,
+    .cm-s-typora-default .cm-property {
+      color: rgb(34, 60, 97);
+    }
+
+    .CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+      border-left: 3px solid rgb(34, 60, 97);
+    }
+
+    .outline-content li,
+    .outline-content ul {
+      line-height: 1.4rem;
+    }
+
+    .dropdown-menu {
+      background-color: rgb(249, 249, 249);
+    }
+
+    .cm-s-inner .cm-header,
+    .cm-s-inner.cm-header {
+      color: rgb(86, 106, 218);
+    }
+
+    .cm-s-inner .cm-comment,
+    .cm-s-inner.cm-comment {
+      color: rgb(117, 120, 123);
+    }
+
+    .cm-s-inner .cm-keyword,
+    .cm-s-inner .cm-property,
+    .cm-s-inner.cm-keyword,
+    .cm-s-inner.cm-property {
+      color: rgb(29, 117, 179);
+    }
+
+    .cm-s-inner .cm-atom,
+    .cm-s-inner .cm-number,
+    .cm-s-inner.cm-atom,
+    .cm-s-inner.cm-number {
+      color: rgb(117, 67, 138);
+    }
+
+    .cm-s-inner .cm-node,
+    .cm-s-inner .cm-tag,
+    .cm-s-inner.cm-node,
+    .cm-s-inner.cm-tag {
+      color: rgb(156, 51, 40);
+    }
+
+    .cm-s-inner .cm-string,
+    .cm-s-inner.cm-string {
+      color: rgb(179, 94, 20);
+    }
+
+    .cm-s-inner .cm-variable,
+    .cm-s-inner .cm-qualifier,
+    .cm-s-inner.cm-variable,
+    .cm-s-inner.cm-qualifier {
+      color: rgb(4, 125, 101);
+    }
+
+    .file-node-open-state,
+    .file-node-icon {
+      color: rgb(158, 158, 158);
+    }
+
+    .code-tooltip.md-hover-tip {
+      background: rgb(0, 0, 0);
+    }
+
+    .typora-export li,
+    .typora-export p,
+    .typora-export,
+    .footnote-line {
+      white-space: normal;
+    }
+  </style>
+</head>
+
+<body class='typora-export'>
+  <div id='write' class='is-node'>
+    <h1><a name="why-is-fisher-yates-the-best-shuffle" class="md-header-anchor"></a><span>Why is Fisher-Yates the best
+        shuffle?</span></h1>
+    <p><span>Shuffle algorithm is more common than you imagine in our daily life. Besides card shuffling, there are a
+        lot of scenarios requiring shuffle algorithm to guarantee fairness. For instance, it&#39;s critical to shuffle
+        the training set in the realm of machine learning to prevent over-fitting.</span></p>
+    <p><span>However, how could we evaluate the performance of a shuffle algorithm? Is it truly fair regarding
+        randomness? Is it efficient to execute when the scale increases?</span></p>
+    <h2><a name="fisher-and-yates-algorithm" class="md-header-anchor"></a><span>Fisher and Yates&#39; algorithm</span>
+    </h2>
+    <blockquote>
+      <p><span>The Fisher–Yates shuffle, in its original form, was described in 1938 by </span><a
+          href='https://en.wikipedia.org/wiki/Ronald_Fisher'><span>Ronald Fisher</span></a><span> and </span><a
+          href='https://en.wikipedia.org/wiki/Frank_Yates'><span>Frank Yates</span></a><span> in their book
+        </span><em><span>Statistical tables for biological, agricultural and medical research</span></em><span>.</span>
+      </p>
+      <p><span>Pseudo code:</span></p>
+      <pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded"
+        lang="pseudocode"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="pseudocode"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 32px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+  </div>
+  <div class="CodeMirror-measure"></div>
+  <div style="position: relative; z-index: 1;"></div>
+  <div class="CodeMirror-code" role="presentation" style="">
+    <div class="CodeMirror-activeline" style="position: relative;">
+      <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+      <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div>
+      <div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;">
+        <div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show"
+          style="left: 0px; width: 19px;">1</div>
+      </div>
+      <pre class=" CodeMirror-line "
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">To</span> <span class="cm-variable">shuffle</span> <span class="cm-variable">an</span> <span class="cm-atom">array</span> <span class="cm-variable">a</span> <span class="cm-keyword">of</span> <span class="cm-variable">n</span> <span class="cm-variable">elements</span> <span class="cm-bracket">(</span><span class="cm-variable">indices</span> <span class="cm-number">0</span>..<span class="cm-variable">n</span><span class="cm-operator">-</span><span class="cm-number">1</span><span class="cm-bracket">):</span></span></pre>
+    </div>
+    <div style="position: relative;">
+      <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
+        <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">2</div>
+      </div>
+      <pre class=" CodeMirror-line "
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+    </div>
+    <div style="position: relative;">
+      <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
+        <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">3</div>
+      </div>
+      <pre class=" CodeMirror-line "
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-variable">from</span> <span class="cm-variable">n</span>−<span class="cm-number">1</span> <span class="cm-variable">downto</span> <span class="cm-number">1</span> <span class="cm-variable">do</span></span></pre>
+    </div>
+    <div style="position: relative;" class="">
+      <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
+        <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">4</div>
+      </div>
+      <pre class=" CodeMirror-line "
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable">j</span> <span class="cm-bracket">:</span><span class="cm-operator">=</span> <span class="cm-variable">random</span> <span class="cm-variable">integer</span> <span class="cm-variable">such</span> <span class="cm-variable">that</span> <span class="cm-number">0</span> ≤ <span class="cm-variable">j</span> ≤ <span class="cm-variable">i</span></span></pre>
+    </div>
+    <div class="" style="position: relative;">
+      <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
+        <div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show"
+          style="left: 0px; width: 19px;">5</div>
+      </div>
+      <pre class=" CodeMirror-line "
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable">exchange</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">j</span><span class="cm-bracket">]</span> <span class="cm-keyword">and</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">i</span><span class="cm-bracket">]</span></span></pre>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div>
+  <div class="CodeMirror-gutters" style="height: 90px;">
+    <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div>
+  </div>
+  </div>
+  </div>
+  </pre>
+  </blockquote>
+  <p><span>The procedure of Fisher-Yates shuffle is visualized below left.</span></p>
+  <div id="knuth" style="position: relative;">
+    <script src="p5.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="grafica.min.js"></script>
+    <script src="knuth.js"></script>
+  </div>
+  <p><span>Each step in this visualization is a swap. Due to the design of Fisher-Yates, an entire shuffle always
+      requires strictly n swaps. But what&#39;s the calculations done on the right hand side?</span></p>
+  <h2><a name="shannon-entropy-distribution" class="md-header-anchor"></a><span>Shannon Entropy distribution</span></h2>
+  <p><span>In the last visualization, the right hand side is showing a synchronous calculation of
+    </span><strong><em><span>Shannon Entropy</span></em></strong><span>. Shannon Entropy of a shuffled sequence (of size
+    </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg
+        xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.551ex" viewBox="0 -555.2 600 667.8"
+        role="img" focusable="false" style="vertical-align: -0.262ex;">
+        <defs>
+          <path stroke-width="0" id="E110-MJMATHI-6E"
+            d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
+          </path>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+          <use xlink:href="#E110-MJMATHI-6E" x="0" y="0"></use>
+        </g>
+      </svg></span>
+    <script type="math/tex">n</script><span>) is calculated as:</span></p>
+  <ol>
+    <li><span>Calculate the modulo differences between adjacent elements: </span><span class="MathJax_SVG" tabindex="-1"
+        style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.593ex"
+          height="2.45ex" viewBox="0 -776.4 7574.5 1055" role="img" focusable="false" style="vertical-align: -0.647ex;">
+          <defs>
+            <path stroke-width="0" id="E315-MJMAIN-394"
+              d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z">
+            </path>
+            <path stroke-width="0" id="E315-MJMATHI-41"
+              d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z">
+            </path>
+            <path stroke-width="0" id="E315-MJMATHI-69"
+              d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z">
+            </path>
+            <path stroke-width="0" id="E315-MJMAIN-3D"
+              d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
+            </path>
+            <path stroke-width="0" id="E315-MJMAIN-2212"
+              d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+            <path stroke-width="0" id="E315-MJMAIN-31"
+              d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E315-MJMAIN-394" x="0" y="0"></use>
+            <g transform="translate(833,0)">
+              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="1060" y="-213"></use>
+            </g>
+            <use xlink:href="#E315-MJMAIN-3D" x="2204" y="0"></use>
+            <g transform="translate(3260,0)">
+              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="1060" y="-213"></use>
+            </g>
+            <use xlink:href="#E315-MJMAIN-2212" x="4576" y="0"></use>
+            <g transform="translate(5576,0)">
+              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
+              <g transform="translate(750,-150)">
+                <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="0" y="0"></use>
+                <use transform="scale(0.707)" xlink:href="#E315-MJMAIN-2212" x="345" y="0"></use>
+                <use transform="scale(0.707)" xlink:href="#E315-MJMAIN-31" x="1123" y="0"></use>
+              </g>
+            </g>
+          </g>
+        </svg></span>
+      <script type="math/tex">\Delta A_i=A_i-A_{i-1}</script>
+    </li>
+  </ol>
+  <ol start='2'>
+    <li><span>With </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg
+          xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.551ex" viewBox="0 -555.2 600 667.8"
+          role="img" focusable="false" style="vertical-align: -0.262ex;">
+          <defs>
+            <path stroke-width="0" id="E110-MJMATHI-6E"
+              d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E110-MJMATHI-6E" x="0" y="0"></use>
+          </g>
+        </svg></span>
+      <script type="math/tex">n</script><span> differences from above, count how many times each difference </span><span
+        class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg
+          xmlns:xlink="http://www.w3.org/1999/xlink" width="8.558ex" height="2.45ex" viewBox="-12 -776.4 3684.5 1055"
+          role="img" focusable="false" style="vertical-align: -0.647ex; margin-left: -0.028ex;">
+          <defs>
+            <path stroke-width="0" id="E323-MJMATHI-6A"
+              d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
+            </path>
+            <path stroke-width="0" id="E323-MJMAIN-3D"
+              d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
+            </path>
+            <path stroke-width="0" id="E323-MJMAIN-394"
+              d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z">
+            </path>
+            <path stroke-width="0" id="E323-MJMATHI-41"
+              d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z">
+            </path>
+            <path stroke-width="0" id="E323-MJMATHI-69"
+              d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E323-MJMATHI-6A" x="0" y="0"></use>
+            <use xlink:href="#E323-MJMAIN-3D" x="689" y="0"></use>
+            <use xlink:href="#E323-MJMAIN-394" x="1745" y="0"></use>
+            <g transform="translate(2578,0)">
+              <use xlink:href="#E323-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E323-MJMATHI-69" x="1060" y="-213"></use>
+            </g>
+          </g>
+        </svg></span>
+      <script type="math/tex">j=\Delta A_i</script><span> occurs, denoted as </span><span class="MathJax_SVG"
+        tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="2.57ex" height="2.707ex" viewBox="0 -776.4 1106.3 1165.7" role="img" focusable="false"
+          style="vertical-align: -0.904ex;">
+          <defs>
+            <path stroke-width="0" id="E247-MJMATHI-43"
+              d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
+            </path>
+            <path stroke-width="0" id="E247-MJMATHI-6A"
+              d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E247-MJMATHI-43" x="0" y="0"></use>
+            <use transform="scale(0.707)" xlink:href="#E247-MJMATHI-6A" x="1011" y="-213"></use>
+          </g>
+        </svg></span>
+      <script type="math/tex">C_j</script><span> (the blue numbers above, corresponding to the blue histogram).</span>
+    </li>
+    <li><span>Calculate the normalized difference </span><span class="MathJax_SVG" tabindex="-1"
+        style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.389ex"
+          height="2.836ex" viewBox="-39 -831.8 4473.2 1221" role="img" focusable="false"
+          style="vertical-align: -0.904ex; margin-left: -0.091ex;">
+          <defs>
+            <path stroke-width="0" id="E352-MJMATHI-70"
+              d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z">
+            </path>
+            <path stroke-width="0" id="E352-MJMATHI-6A"
+              d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
+            </path>
+            <path stroke-width="0" id="E352-MJMAIN-3D"
+              d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
+            </path>
+            <path stroke-width="0" id="E352-MJMATHI-43"
+              d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
+            </path>
+            <path stroke-width="0" id="E352-MJMAIN-2F"
+              d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z">
+            </path>
+            <path stroke-width="0" id="E352-MJMATHI-6E"
+              d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E352-MJMATHI-70" x="0" y="0"></use>
+            <use transform="scale(0.707)" xlink:href="#E352-MJMATHI-6A" x="711" y="-213"></use>
+            <use xlink:href="#E352-MJMAIN-3D" x="1172" y="0"></use>
+            <g transform="translate(2227,0)">
+              <use xlink:href="#E352-MJMATHI-43" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E352-MJMATHI-6A" x="1011" y="-213"></use>
+            </g>
+            <use xlink:href="#E352-MJMAIN-2F" x="3334" y="0"></use>
+            <use xlink:href="#E352-MJMATHI-6E" x="3834" y="0"></use>
+          </g>
+        </svg></span>
+      <script type="math/tex">p_j=C_j/n</script><span> (The orange histogram above).</span></li>
+    <li><span>Shannon Entropy = </span><span class="MathJax_SVG" tabindex="-1"
+        style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.269ex"
+          height="3.735ex" viewBox="0 -1053 7865.9 1608.2" role="img" focusable="false"
+          style="vertical-align: -1.289ex;">
+          <defs>
+            <path stroke-width="0" id="E454-MJSZ1-2211"
+              d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMATHI-6A"
+              d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-2208"
+              d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMATHI-43"
+              d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-2212"
+              d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+            <path stroke-width="0" id="E454-MJMATHI-70"
+              d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-6C"
+              d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-6F"
+              d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-67"
+              d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-32"
+              d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-28"
+              d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z">
+            </path>
+            <path stroke-width="0" id="E454-MJMAIN-29"
+              d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z">
+            </path>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+            <use xlink:href="#E454-MJSZ1-2211" x="0" y="0"></use>
+            <g transform="translate(1056,488)">
+              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E454-MJMAIN-2208" x="412" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-43" x="1079" y="0"></use>
+            </g>
+            <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="1493" y="-429"></use>
+            <use xlink:href="#E454-MJMAIN-2212" x="2623" y="0"></use>
+            <g transform="translate(3401,0)">
+              <use xlink:href="#E454-MJMATHI-70" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="711" y="-213"></use>
+            </g>
+            <g transform="translate(4462,0)">
+              <use xlink:href="#E454-MJMAIN-6C"></use>
+              <use xlink:href="#E454-MJMAIN-6F" x="278" y="0"></use>
+              <use xlink:href="#E454-MJMAIN-67" x="778" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E454-MJMAIN-32" x="1807" y="-342"></use>
+            </g>
+            <use xlink:href="#E454-MJMAIN-28" x="6193" y="0"></use>
+            <g transform="translate(6582,0)">
+              <use xlink:href="#E454-MJMATHI-70" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="711" y="-213"></use>
+            </g>
+            <use xlink:href="#E454-MJMAIN-29" x="7476" y="0"></use>
+          </g>
+        </svg></span>
+      <script type="math/tex">\sum_j^{j\in C} -p_j\log_2(p_j)</script>
+    </li>
+  </ol>
+  <p><span>How can this magic metric help us tell if Fisher-Yates is good or bad?</span></p>
+  <p><span>Well, let&#39;s introduce some comparisons. Say we apply a sort function on, whose compare function returns
+      random comparison result (in other words, can only make the array messy). We call it
+    </span><strong><em><span>Randomsort</span></em></strong><span>. Let&#39;s see their </span><strong><span>Shannon
+        Entropy Distributions</span></strong><span> when array size = 50.</span></p>
+  <p><span>So far <span id='Count'></span> samples.</span></p>
+  
+  <div id="Entropy" style="position: relative;">
+    <script src="plotly.min.js"></script>
+    <script src="entropy.js"></script>
+  </div>
+  <p><span>Given that each shuffled permutation has equal probability to appear, Shannon entropy distribution should be
+      a normal distribution. However, we can clearly see that Randomsort has an skewed asymmetric shape. On the other
+      hand, Fisher-Yates&#39; is approaching a normal distribution with more sampling. Thus, Fisher-Yates&#39; gives
+      more </span><strong><span>fair</span></strong><span> shuffled results.</span></p>
+  <p>&nbsp;</p>
+  </div>
+</body>
+
+</html>
