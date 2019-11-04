@@ -1,116 +1,144 @@
 {
   var x1 = [];
   var y1 = [];
+  var z1 = [];
   var x2 = [];
   var y2 = [];
-  Count2 = 150
+  var z2 = [];
+  var data = [];
+
   nn = 10
   N = 5000
-  b = []
-  Plotly.d3.csv('./k.csv', function (data) { p(data, x1, y1) })
-  // Plotly.d3.csv('r.csv', function (data) { p(data, x2, y2) })
+  tick = []
+  ok = 0
+  for (var i = 0; i < nn; ++i) { tick.push(i) }
+  var trace1 = {}, trace2 = {};
+  Plotly.d3.csv('https://raw.githubusercontent.com/TimothyGe/shuffle-vis/master/k.csv', function (data) { p1(data) })
 
-  function p(rows, x, y) {
-    console.log("bra")
+  Plotly.d3.csv('https://raw.githubusercontent.com/TimothyGe/shuffle-vis/master/r.csv', function (data) { p2(data) })
+
+  function p1(rows) {
     for (var i = 0; i < rows.length; i++) {
       row = rows[i]
       for (var j = 0; j < nn; j++) {
-        x.push(j)
-        y.push(row[str(j)])
+        x1.push(j)
+        y1.push(row[j])
+        z1.push(row['id'])
       }
     }
+
+    trace1 = {
+      x: x1,
+      y: y1,
+      z: z1,
+      colorscale: 'Reds',
+      type: 'histogram2d',
+      xbins: {
+        start: 0,
+        size: 1,
+        end: nn
+      }
+    }
+    ok++
   }
 
-  console.log(x1.length, x2.length)
-
-  var trace1 = {
-    x: x1,
-    y: y1,
-    colorscale: 'Reds',
-    type: 'histogram2d',
-    xbins: {
-      start: 0,
-      size: 1,
-      end: nn
+  function p2(rows) {
+    for (var i = 0; i < rows.length; i++) {
+      row = rows[i]
+      for (var j = 0; j < nn; j++) {
+        x2.push(j)
+        y2.push(row[j])
+        z2.push(row['id'])
+      }
     }
-  };
 
-  var trace2 = {
-    x: x2,
-    y: y2,
-    xaxis: 'x2',
-    yaxis: 'y2',
-    colorscale: 'Reds',
-    type: 'histogram2d',
-    xbins: {
-      start: 0,
-      size: 1,
-      end: nn
+    trace2 = {
+      x: x2,
+      y: y2,
+      z: z2,
+      xaxis: 'x2',
+      yaxis: 'y2',
+      colorscale: 'Reds',
+      type: 'histogram2d',
+      xbins: {
+        start: 0,
+        size: 1,
+        end: nn
+      }
     }
-  };
+    ok++
+  }
 
-  var data = [trace1, trace2];
-
-  var Steps = []
-
-  for (var i = 0; i < N; i++) {
-    Steps.push({
-      label: i,
-      method: 'restyle',
-      args: [i, {
-        transforms: [{
+  async function makePlot() {
+    while (ok != 2) {
+      console.log(ok)
+      await sleep(20)
+    }
+    data = [trace1, trace2]
+    var Steps = []
+    for (var i = 0; i < N; i += 1000) {
+      Steps.push({
+        label: i,
+        method: 'restyle',
+        args: ['transforms[0]', [{
           type: 'filter',
-          target: 'id',
-          operation: '<',
+          enabled: true,
+          target: 'z',
+          operation: '<=',
           value: i
-        }]
+        }], [0, 1]]
+      })
+    }
+
+    var layout = {
+      width: 660,
+      height: 460,
+      grid: { rows: 1, columns: 2 },
+      xaxis: {
+        title: "Original position",
+        fixedrange: true,
+        tickmode: "array",
+        tickvals: tick,
+      },
+      yaxis: {
+        title: "Shuffled position",
+        fixedrange: true,
+        tickmode: "array",
+        tickvals: tick,
+      },
+      xaxis2: {
+        title: "Original position",
+        fixedrange: true,
+        tickmode: "array",
+        tickvals: tick,
+      },
+      yaxis2: {
+        title: "Shuffled position",
+        fixedrange: true,
+        tickmode: "array",
+        tickvals: tick,
+      },
+      sliders: [{
+        pad: { b: 0 },
+        x: 0,
+        y: -0.2,
+        currentvalue: {
+          xanchor: 'left',
+          prefix: 'Test counts: ',
+          font: {
+            color: '0',
+            size: 15
+          }
+        },
+        steps: Steps
       }]
-    })
+    };
+    Plotly.newPlot('heat', data, layout);
   }
 
-  var layout = {
-    width: 660,
-    height: 460,
-    grid: { rows: 1, columns: 2, pattern: 'independent' },
-    xaxis: {
-      title: "Original position",
-      fixedrange: true,
-      tickmode: "array",
-      tickvals: b,
-    },
-    yaxis: {
-      title: "Shuffled position",
-      fixedrange: true,
-      tickmode: "array",
-      tickvals: b,
-    },
-    xaxis2: {
-      title: "Original position",
-      fixedrange: true,
-      tickmode: "array",
-      tickvals: b,
-    },
-    yaxis2: {
-      title: "Shuffled position",
-      fixedrange: true,
-      tickmode: "array",
-      tickvals: b,
-    },
-    sliders: [{
-      pad: { t: 0 },
-      x: 0,
-      y: -0.2,
-      currentvalue: {
-        xanchor: 'left',
-        font: {
-          color: '#888',
-          size: 15
-        }
-      },
-      steps: Steps
-    }]
-  };
+  makePlot()
 
-  Plotly.newPlot('heat', data, layout);
-
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 }
