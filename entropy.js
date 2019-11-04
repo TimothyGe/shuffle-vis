@@ -61,7 +61,7 @@
     t2 = rsort()
     Plotly.extendTraces('Entropy', { x: [[t1], [t2]] }, [0, 1])
     document.getElementById('Count').innerHTML = ++Count
-  }, 300)
+  }, 100)
 
   function knuth() {
     for (let i = 0; i < nn; i++) { a[i] = i }

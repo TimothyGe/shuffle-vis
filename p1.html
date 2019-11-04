@@ -1574,7 +1574,10 @@
       </p>
       <p><span>Pseudo code:</span></p>
       <pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded"
-        lang="pseudocode"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="pseudocode"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 32px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+        lang="pseudocode"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="pseudocode"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 32px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      <div class="CodeMirror-linenumber CodeMirror-gutter-elt">
+        <div>5</div>
+      </div>
   </div>
   <div class="CodeMirror-measure"></div>
   <div style="position: relative; z-index: 1;"></div>
@@ -1603,20 +1606,20 @@
       <pre class=" CodeMirror-line "
         role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-variable">from</span> <span class="cm-variable">n</span>−<span class="cm-number">1</span> <span class="cm-variable">downto</span> <span class="cm-number">1</span> <span class="cm-variable">do</span></span></pre>
     </div>
-    <div style="position: relative;" class="">
+    <div style="position: relative;">
       <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
         <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">4</div>
       </div>
       <pre class=" CodeMirror-line "
-        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable">j</span> <span class="cm-bracket">:</span><span class="cm-operator">=</span> <span class="cm-variable">random</span> <span class="cm-variable">integer</span> <span class="cm-variable">such</span> <span class="cm-variable">that</span> <span class="cm-number">0</span> ≤ <span class="cm-variable">j</span> ≤ <span class="cm-variable">i</span></span></pre>
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">j</span> <span class="cm-bracket">:</span><span class="cm-operator">=</span> <span class="cm-variable">random</span> <span class="cm-variable">integer</span> <span class="cm-variable">such</span> <span class="cm-variable">that</span> <span class="cm-number">0</span> ≤ <span class="cm-variable">j</span> ≤ <span class="cm-variable">i</span></span></pre>
     </div>
-    <div class="" style="position: relative;">
+    <div style="position: relative;">
       <div class="CodeMirror-gutter-wrapper" style="left: -28px;">
         <div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show"
           style="left: 0px; width: 19px;">5</div>
       </div>
       <pre class=" CodeMirror-line "
-        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable">exchange</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">j</span><span class="cm-bracket">]</span> <span class="cm-keyword">and</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">i</span><span class="cm-bracket">]</span></span></pre>
+        role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">exchange</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">j</span><span class="cm-bracket">]</span> <span class="cm-keyword">and</span> <span class="cm-variable">a</span><span class="cm-bracket">[</span><span class="cm-variable">i</span><span class="cm-bracket">]</span></span></pre>
     </div>
   </div>
   </div>
@@ -1632,12 +1635,14 @@
   </pre>
   </blockquote>
   <p><span>The procedure of Fisher-Yates shuffle is visualized below left.</span></p>
+  <hr />
   <div id="knuth" style="position: relative;">
-    <script src="p5.js"></script>
-    <script src="p5.dom.min.js"></script>
-    <script src="grafica.min.js"></script>
-    <script src="knuth.js"></script>
-  </div>
+      <script src="p5.js"></script>
+      <script src="p5.dom.min.js"></script>
+      <script src="grafica.min.js"></script>
+      <script src="knuth.js"></script>
+    </div>
+  <hr />
   <p><span>Each step in this visualization is a swap. Due to the design of Fisher-Yates, an entire shuffle always
       requires strictly n swaps. But what&#39;s the calculations done on the right hand side?</span></p>
   <h2><a name="shannon-entropy-distribution" class="md-header-anchor"></a><span>Shannon Entropy distribution</span></h2>
@@ -1647,12 +1652,12 @@
         xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.551ex" viewBox="0 -555.2 600 667.8"
         role="img" focusable="false" style="vertical-align: -0.262ex;">
         <defs>
-          <path stroke-width="0" id="E110-MJMATHI-6E"
+          <path stroke-width="0" id="E3-MJMATHI-6E"
             d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
           </path>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-          <use xlink:href="#E110-MJMATHI-6E" x="0" y="0"></use>
+          <use xlink:href="#E3-MJMATHI-6E" x="0" y="0"></use>
         </g>
       </svg></span>
     <script type="math/tex">n</script><span>) is calculated as:</span></p>
@@ -1661,60 +1666,58 @@
         style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.593ex"
           height="2.45ex" viewBox="0 -776.4 7574.5 1055" role="img" focusable="false" style="vertical-align: -0.647ex;">
           <defs>
-            <path stroke-width="0" id="E315-MJMAIN-394"
+            <path stroke-width="0" id="E2-MJMAIN-394"
               d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z">
             </path>
-            <path stroke-width="0" id="E315-MJMATHI-41"
+            <path stroke-width="0" id="E2-MJMATHI-41"
               d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z">
             </path>
-            <path stroke-width="0" id="E315-MJMATHI-69"
+            <path stroke-width="0" id="E2-MJMATHI-69"
               d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z">
             </path>
-            <path stroke-width="0" id="E315-MJMAIN-3D"
+            <path stroke-width="0" id="E2-MJMAIN-3D"
               d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
             </path>
-            <path stroke-width="0" id="E315-MJMAIN-2212"
+            <path stroke-width="0" id="E2-MJMAIN-2212"
               d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
-            <path stroke-width="0" id="E315-MJMAIN-31"
+            <path stroke-width="0" id="E2-MJMAIN-31"
               d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E315-MJMAIN-394" x="0" y="0"></use>
+            <use xlink:href="#E2-MJMAIN-394" x="0" y="0"></use>
             <g transform="translate(833,0)">
-              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="1060" y="-213"></use>
+              <use xlink:href="#E2-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="1060" y="-213"></use>
             </g>
-            <use xlink:href="#E315-MJMAIN-3D" x="2204" y="0"></use>
+            <use xlink:href="#E2-MJMAIN-3D" x="2204" y="0"></use>
             <g transform="translate(3260,0)">
-              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="1060" y="-213"></use>
+              <use xlink:href="#E2-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="1060" y="-213"></use>
             </g>
-            <use xlink:href="#E315-MJMAIN-2212" x="4576" y="0"></use>
+            <use xlink:href="#E2-MJMAIN-2212" x="4576" y="0"></use>
             <g transform="translate(5576,0)">
-              <use xlink:href="#E315-MJMATHI-41" x="0" y="0"></use>
+              <use xlink:href="#E2-MJMATHI-41" x="0" y="0"></use>
               <g transform="translate(750,-150)">
-                <use transform="scale(0.707)" xlink:href="#E315-MJMATHI-69" x="0" y="0"></use>
-                <use transform="scale(0.707)" xlink:href="#E315-MJMAIN-2212" x="345" y="0"></use>
-                <use transform="scale(0.707)" xlink:href="#E315-MJMAIN-31" x="1123" y="0"></use>
+                <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="0" y="0"></use>
+                <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-2212" x="345" y="0"></use>
+                <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-31" x="1123" y="0"></use>
               </g>
             </g>
           </g>
         </svg></span>
       <script type="math/tex">\Delta A_i=A_i-A_{i-1}</script>
     </li>
-  </ol>
-  <ol start='2'>
     <li><span>With </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg
           xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.551ex" viewBox="0 -555.2 600 667.8"
           role="img" focusable="false" style="vertical-align: -0.262ex;">
           <defs>
-            <path stroke-width="0" id="E110-MJMATHI-6E"
+            <path stroke-width="0" id="E3-MJMATHI-6E"
               d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E110-MJMATHI-6E" x="0" y="0"></use>
+            <use xlink:href="#E3-MJMATHI-6E" x="0" y="0"></use>
           </g>
         </svg></span>
       <script type="math/tex">n</script><span> differences from above, count how many times each difference </span><span
@@ -1722,29 +1725,29 @@
           xmlns:xlink="http://www.w3.org/1999/xlink" width="8.558ex" height="2.45ex" viewBox="-12 -776.4 3684.5 1055"
           role="img" focusable="false" style="vertical-align: -0.647ex; margin-left: -0.028ex;">
           <defs>
-            <path stroke-width="0" id="E323-MJMATHI-6A"
+            <path stroke-width="0" id="E4-MJMATHI-6A"
               d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
             </path>
-            <path stroke-width="0" id="E323-MJMAIN-3D"
+            <path stroke-width="0" id="E4-MJMAIN-3D"
               d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
             </path>
-            <path stroke-width="0" id="E323-MJMAIN-394"
+            <path stroke-width="0" id="E4-MJMAIN-394"
               d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z">
             </path>
-            <path stroke-width="0" id="E323-MJMATHI-41"
+            <path stroke-width="0" id="E4-MJMATHI-41"
               d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z">
             </path>
-            <path stroke-width="0" id="E323-MJMATHI-69"
+            <path stroke-width="0" id="E4-MJMATHI-69"
               d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E323-MJMATHI-6A" x="0" y="0"></use>
-            <use xlink:href="#E323-MJMAIN-3D" x="689" y="0"></use>
-            <use xlink:href="#E323-MJMAIN-394" x="1745" y="0"></use>
+            <use xlink:href="#E4-MJMATHI-6A" x="0" y="0"></use>
+            <use xlink:href="#E4-MJMAIN-3D" x="689" y="0"></use>
+            <use xlink:href="#E4-MJMAIN-394" x="1745" y="0"></use>
             <g transform="translate(2578,0)">
-              <use xlink:href="#E323-MJMATHI-41" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E323-MJMATHI-69" x="1060" y="-213"></use>
+              <use xlink:href="#E4-MJMATHI-41" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E4-MJMATHI-69" x="1060" y="-213"></use>
             </g>
           </g>
         </svg></span>
@@ -1753,16 +1756,16 @@
           width="2.57ex" height="2.707ex" viewBox="0 -776.4 1106.3 1165.7" role="img" focusable="false"
           style="vertical-align: -0.904ex;">
           <defs>
-            <path stroke-width="0" id="E247-MJMATHI-43"
+            <path stroke-width="0" id="E5-MJMATHI-43"
               d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
             </path>
-            <path stroke-width="0" id="E247-MJMATHI-6A"
+            <path stroke-width="0" id="E5-MJMATHI-6A"
               d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E247-MJMATHI-43" x="0" y="0"></use>
-            <use transform="scale(0.707)" xlink:href="#E247-MJMATHI-6A" x="1011" y="-213"></use>
+            <use xlink:href="#E5-MJMATHI-43" x="0" y="0"></use>
+            <use transform="scale(0.707)" xlink:href="#E5-MJMATHI-6A" x="1011" y="-213"></use>
           </g>
         </svg></span>
       <script type="math/tex">C_j</script><span> (the blue numbers above, corresponding to the blue histogram).</span>
@@ -1772,35 +1775,35 @@
           height="2.836ex" viewBox="-39 -831.8 4473.2 1221" role="img" focusable="false"
           style="vertical-align: -0.904ex; margin-left: -0.091ex;">
           <defs>
-            <path stroke-width="0" id="E352-MJMATHI-70"
+            <path stroke-width="0" id="E6-MJMATHI-70"
               d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z">
             </path>
-            <path stroke-width="0" id="E352-MJMATHI-6A"
+            <path stroke-width="0" id="E6-MJMATHI-6A"
               d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
             </path>
-            <path stroke-width="0" id="E352-MJMAIN-3D"
+            <path stroke-width="0" id="E6-MJMAIN-3D"
               d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z">
             </path>
-            <path stroke-width="0" id="E352-MJMATHI-43"
+            <path stroke-width="0" id="E6-MJMATHI-43"
               d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
             </path>
-            <path stroke-width="0" id="E352-MJMAIN-2F"
+            <path stroke-width="0" id="E6-MJMAIN-2F"
               d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z">
             </path>
-            <path stroke-width="0" id="E352-MJMATHI-6E"
+            <path stroke-width="0" id="E6-MJMATHI-6E"
               d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E352-MJMATHI-70" x="0" y="0"></use>
-            <use transform="scale(0.707)" xlink:href="#E352-MJMATHI-6A" x="711" y="-213"></use>
-            <use xlink:href="#E352-MJMAIN-3D" x="1172" y="0"></use>
+            <use xlink:href="#E6-MJMATHI-70" x="0" y="0"></use>
+            <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-6A" x="711" y="-213"></use>
+            <use xlink:href="#E6-MJMAIN-3D" x="1172" y="0"></use>
             <g transform="translate(2227,0)">
-              <use xlink:href="#E352-MJMATHI-43" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E352-MJMATHI-6A" x="1011" y="-213"></use>
+              <use xlink:href="#E6-MJMATHI-43" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E6-MJMATHI-6A" x="1011" y="-213"></use>
             </g>
-            <use xlink:href="#E352-MJMAIN-2F" x="3334" y="0"></use>
-            <use xlink:href="#E352-MJMATHI-6E" x="3834" y="0"></use>
+            <use xlink:href="#E6-MJMAIN-2F" x="3334" y="0"></use>
+            <use xlink:href="#E6-MJMATHI-6E" x="3834" y="0"></use>
           </g>
         </svg></span>
       <script type="math/tex">p_j=C_j/n</script><span> (The orange histogram above).</span></li>
@@ -1809,67 +1812,67 @@
           height="3.735ex" viewBox="0 -1053 7865.9 1608.2" role="img" focusable="false"
           style="vertical-align: -1.289ex;">
           <defs>
-            <path stroke-width="0" id="E454-MJSZ1-2211"
+            <path stroke-width="0" id="E7-MJSZ1-2211"
               d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z">
             </path>
-            <path stroke-width="0" id="E454-MJMATHI-6A"
+            <path stroke-width="0" id="E7-MJMATHI-6A"
               d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-2208"
+            <path stroke-width="0" id="E7-MJMAIN-2208"
               d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z">
             </path>
-            <path stroke-width="0" id="E454-MJMATHI-43"
+            <path stroke-width="0" id="E7-MJMATHI-43"
               d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-2212"
+            <path stroke-width="0" id="E7-MJMAIN-2212"
               d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
-            <path stroke-width="0" id="E454-MJMATHI-70"
+            <path stroke-width="0" id="E7-MJMATHI-70"
               d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-6C"
+            <path stroke-width="0" id="E7-MJMAIN-6C"
               d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-6F"
+            <path stroke-width="0" id="E7-MJMAIN-6F"
               d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-67"
+            <path stroke-width="0" id="E7-MJMAIN-67"
               d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-32"
+            <path stroke-width="0" id="E7-MJMAIN-32"
               d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-28"
+            <path stroke-width="0" id="E7-MJMAIN-28"
               d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z">
             </path>
-            <path stroke-width="0" id="E454-MJMAIN-29"
+            <path stroke-width="0" id="E7-MJMAIN-29"
               d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z">
             </path>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-            <use xlink:href="#E454-MJSZ1-2211" x="0" y="0"></use>
+            <use xlink:href="#E7-MJSZ1-2211" x="0" y="0"></use>
             <g transform="translate(1056,488)">
-              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E454-MJMAIN-2208" x="412" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-43" x="1079" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-6A" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMAIN-2208" x="412" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-43" x="1079" y="0"></use>
             </g>
-            <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="1493" y="-429"></use>
-            <use xlink:href="#E454-MJMAIN-2212" x="2623" y="0"></use>
+            <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-6A" x="1493" y="-429"></use>
+            <use xlink:href="#E7-MJMAIN-2212" x="2623" y="0"></use>
             <g transform="translate(3401,0)">
-              <use xlink:href="#E454-MJMATHI-70" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="711" y="-213"></use>
+              <use xlink:href="#E7-MJMATHI-70" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-6A" x="711" y="-213"></use>
             </g>
             <g transform="translate(4462,0)">
-              <use xlink:href="#E454-MJMAIN-6C"></use>
-              <use xlink:href="#E454-MJMAIN-6F" x="278" y="0"></use>
-              <use xlink:href="#E454-MJMAIN-67" x="778" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E454-MJMAIN-32" x="1807" y="-342"></use>
+              <use xlink:href="#E7-MJMAIN-6C"></use>
+              <use xlink:href="#E7-MJMAIN-6F" x="278" y="0"></use>
+              <use xlink:href="#E7-MJMAIN-67" x="778" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMAIN-32" x="1807" y="-342"></use>
             </g>
-            <use xlink:href="#E454-MJMAIN-28" x="6193" y="0"></use>
+            <use xlink:href="#E7-MJMAIN-28" x="6193" y="0"></use>
             <g transform="translate(6582,0)">
-              <use xlink:href="#E454-MJMATHI-70" x="0" y="0"></use>
-              <use transform="scale(0.707)" xlink:href="#E454-MJMATHI-6A" x="711" y="-213"></use>
+              <use xlink:href="#E7-MJMATHI-70" x="0" y="0"></use>
+              <use transform="scale(0.707)" xlink:href="#E7-MJMATHI-6A" x="711" y="-213"></use>
             </g>
-            <use xlink:href="#E454-MJMAIN-29" x="7476" y="0"></use>
+            <use xlink:href="#E7-MJMAIN-29" x="7476" y="0"></use>
           </g>
         </svg></span>
       <script type="math/tex">\sum_j^{j\in C} -p_j\log_2(p_j)</script>
@@ -1880,17 +1883,34 @@
       random comparison result (in other words, can only make the array messy). We call it
     </span><strong><em><span>Randomsort</span></em></strong><span>. Let&#39;s see their </span><strong><span>Shannon
         Entropy Distributions</span></strong><span> when array size = 50.</span></p>
-  <p><span>So far <span id='Count'></span> samples.</span></p>
-  
+  <h5><a name="so-far-count-samples" class="md-header-anchor"></a><span>So far <span id='Count'></span> samples:</span></h5>
+  <hr />
   <div id="Entropy" style="position: relative;">
-    <script src="plotly.min.js"></script>
-    <script src="entropy.js"></script>
-  </div>
-  <p><span>Given that each shuffled permutation has equal probability to appear, Shannon entropy distribution should be
-      a normal distribution. However, we can clearly see that Randomsort has an skewed asymmetric shape. On the other
-      hand, Fisher-Yates&#39; is approaching a normal distribution with more sampling. Thus, Fisher-Yates&#39; gives
-      more </span><strong><span>fair</span></strong><span> shuffled results.</span></p>
-  <p>&nbsp;</p>
+      <script src="plotly.min.js"></script>
+      <script src="entropy.js"></script>
+    </div>
+    <hr />
+    <p><span>Given that each shuffled permutation has equal probability to appear, Shannon entropy distribution should be
+        a normal distribution. However, we can clearly see that Randomsort has an </span><strong><span>skewed
+          asymmetric</span></strong><span> shape. On the other hand, Fisher-Yates&#39; is approaching a normal
+        distribution with more sampling. Thus, Fisher-Yates&#39; gives more
+      </span><strong><span>fair</span></strong><span> shuffled results.</span></p>
+    <h2><a name="where-are-the-elements-going" class="md-header-anchor"></a><span>Where are the elements going?</span>
+    </h2>
+    <p><span>Now let&#39;s take a look at where the elements go after shuffling. The visualization below is the
+        distribution of original position vs. shuffled position. At first, there&#39;s no obvious distinction.</span></p>
+    <hr />
+    <div id="heat" style="position: relative;">
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.4.0"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
+      <script src="heats.js"></script>
+    </div>
+  <hr />
+  <p><span>If you drag the slider to to bigger tests, you see that Fisher-Yates has much more even distribution. Each
+      position has almost probability to end at. However, Randomsort has apparent patterns on the diagonal, which means
+      that elements are more likely to stay on their original position, which is not a satisfying randomness
+      performance.</span></p>
   </div>
 </body>
 
