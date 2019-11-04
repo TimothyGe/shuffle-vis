@@ -1,0 +1,99 @@
+{
+    "config": {
+        "view": {
+            "width": 400,
+            "height": 300
+        },
+        "mark": {
+            "tooltip": null
+        }
+    },
+    "hconcat": [
+        {
+            "mark": "rect",
+            "encoding": {
+                "color": {
+                    "type": "quantitative",
+                    "aggregate": "count",
+                    "field": "dst",
+                    "scale": {
+                        "scheme": "LightGreyTeal"
+                    }
+                },
+                "x": {
+                    "type": "ordinal",
+                    "field": "src",
+                    "title": "Original position"
+                },
+                "y": {
+                    "type": "ordinal",
+                    "field": "dst",
+                    "title": "Shuffled position"
+                }
+            },
+            "selection": {
+                "selector015": {
+                    "type": "single",
+                    "bind": {
+                        "input": "range",
+                        "max": 1000,
+                        "min": 10,
+                        "name": "Test counts",
+                        "step": 50
+                    },
+                    "fields": [
+                        "id"
+                    ],
+                    "init": {
+                        "id": 30
+                    }
+                }
+            },
+            "title": "Fisher-Yates",
+            "transform": [
+                {
+                    "filter": "(datum.algorithm === 'Fisher-Yates')"
+                },
+                {
+                    "filter": "(datum.id < selector015.id)"
+                }
+            ]
+        },
+        {
+            "mark": "rect",
+            "encoding": {
+                "color": {
+                    "type": "quantitative",
+                    "aggregate": "count",
+                    "field": "dst"
+                },
+                "x": {
+                    "type": "ordinal",
+                    "field": "src",
+                    "title": "Original position"
+                },
+                "y": {
+                    "type": "ordinal",
+                    "field": "dst",
+                    "title": "Shuffled position"
+                }
+            },
+            "title": "Randomsort",
+            "transform": [
+                {
+                    "filter": "(datum.algorithm === 'Randomsort')"
+                },
+                {
+                    "filter": "(datum.id < selector015.id)"
+                }
+            ]
+        }
+    ],
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.4.0.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/TimothyGe/shuffle-vis/master/df.csv",
+        "format": {
+            "type": "csv"
+        }
+    }
+}
