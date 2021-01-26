@@ -13,9 +13,9 @@
   ok = 0
   for (var i = 0; i < nn; ++i) { tick.push(i) }
   var trace1 = {}, trace2 = {};
-  Plotly.d3.csv('https://raw.githubusercontent.com/TimothyGe/shuffle-vis/master/k.csv', function (data) { p1(data) })
+  Plotly.d3.csv('https://raw.githubusercontent.com/tianyi-ge/shuffle-vis/master/csv/k.csv', function (data) { p1(data) })
 
-  Plotly.d3.csv('https://raw.githubusercontent.com/TimothyGe/shuffle-vis/master/r.csv', function (data) { p2(data) })
+  Plotly.d3.csv('https://raw.githubusercontent.com/tianyi-ge/shuffle-vis/master/csv/r.csv', function (data) { p2(data) })
 
   function p1(rows) {
     for (var i = 0; i < rows.length; i++) {
